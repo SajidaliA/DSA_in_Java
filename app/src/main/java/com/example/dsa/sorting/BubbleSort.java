@@ -15,9 +15,7 @@ public class BubbleSort {
             swapped = false;
             for (int j = 1; j < arr.length - i; j++) {
                 if (arr[j]<arr[j-1]){
-                    int temp = arr[j];
-                    arr[j] = arr[j-1];
-                    arr[j-1] = temp;
+                 swapInArr(arr, arr[j], arr[j-1]);
                 }
                 swapped = true;
             }
@@ -26,5 +24,10 @@ public class BubbleSort {
             }
         }
 
+    }
+    private static void swapInArr(int[] arr, int lastIndex, int maxElement) {
+        int temp = arr[lastIndex];
+        arr[lastIndex] = arr[maxElement];
+        arr[maxElement] = temp;
     }
 }
